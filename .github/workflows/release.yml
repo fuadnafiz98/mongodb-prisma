@@ -12,7 +12,8 @@ jobs:
         uses: actions/checkout@v2
       - name: build
         run: |
-          cd mongodb-prisma && cd server && yarn
+          ls -lah
+          cd server && yarn
       - name: zip
         run: |
           ls -lah
