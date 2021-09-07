@@ -1,0 +1,23 @@
+name: release
+
+on:
+  push:
+    branches:
+      - "master"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build
+        run: |
+          cd mongodb-prisma && cd server && yarn
+      - name: zip
+        run: |
+          ls -lah
+          zip -r mongodb-prisma.zip mongodb-prisma
+      - name: release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: mongodb-prisma.zip
