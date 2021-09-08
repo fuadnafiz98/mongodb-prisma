@@ -17,8 +17,10 @@ jobs:
       - name: zip
         run: |
           ls -lah
-          cd ..
-          zip -r mongodb-prisma.zip mongodb-prisma
+          zip -r mongodb-prisma.zip .
+          ls -lah
+      - name: check
+        run: |
           ls -lah
       - name: release
         uses: softprops/action-gh-release@v1
