@@ -19,6 +19,7 @@ jobs:
           ls -lah
           cd ..
           zip -r mongodb-prisma.zip mongodb-prisma
+          ls -lah
       - name: release
         uses: softprops/action-gh-release@v1
         with:
